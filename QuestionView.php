@@ -38,15 +38,15 @@
 			</p>
 			<?php echo $answerOne["AnswerText"];?>
 			<input type="radio"  name="anAnswer" 
-					  value="<?php echo $answerOne["AnswerID"]; ?>" ></br>
+					  value="" ><?php echo $answerOne["AnswerText"]; ?></br>
 					  
 			<?php echo $answerTwo["AnswerText"];?>
 			<input type="radio"  name="anAnswer" 
-					  value="<?php echo $answerTwo["AnswerID"]; ?>" ></br>
+					  value="" ><?php echo $answerTwo["AnswerText"]; ?></br>
 					  
 			<?php echo $answerThree["AnswerText"];?>
 			<input type="radio"  name="anAnswer" 
-					  value="<?php echo $answerThree["AnswerID"]; ?>" ></br>	
+					  value="" ><?php echo $answerThree["AnswerText"]; ?></br>	
 				
 			<!--Added in-->
 			<input type="submit" name="command" value="Submit">
