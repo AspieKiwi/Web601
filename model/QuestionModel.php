@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    require_once("DBCon.php");
+    require_once("../control/DBCon.php");
     
     class QuestionModel{
         public function setSchoolValue($pSchoolName, $pEmail, $pClassroom){
@@ -10,7 +10,7 @@
 				$SQL = "SELECT SchoolID FROM tblschool WHERE SchoolName = '$pSchoolName'";
 				$aDB = new DBConnection('competion_database');
 				$aDB->query($SQL);
-				$row = $aDB->next();
+				$row = $aDB->fetchNext();
 				$schoolID = $row['SchoolID'];
 							
 				
@@ -41,12 +41,11 @@
 			$aDB->query("SELECT * FROM `tblproposedanswer` WHERE QuestionID = 1");
 	  
 			while($aRow = $aDB->fetchNext()){
-				echo $aRow['AnswerText']. "</br>";
-		  
-		  
-					}
-				$aDB->free();
+				$Answer[] = $aRow['AnswerText']. "</br>";
+		    	}
+		return $Answer;
 		}
+		
 		
 		
 	public function fetchNext()
@@ -55,6 +54,17 @@
 		
 	 return 	$compDB->fetchNext();
 	}
+	
+	
+	public function thankyouone($pPEmail){
+		$UserID = "";
+		$SQL = "SELECT `Classroom` FROM `tblcompetitor` WHERE Email = '$pPEmail'";
+		$aDB = new DBConnection('competion_database');
+		$aDB->query($SQL);
+		$row = $aDB->fetchNext();
+		$UserID = $row['Classroom'];
+		return $UserID;
+	}
 		
 		
 		
@@ -62,28 +72,6 @@
 		
 		
             
-        
-        public function value(){
-            $result = "";
-            
-            
-            if(isset($_SESSION['user'])){
-                $UserName = $_SESSION['user'];
-                $SQL = "SELECT `value` FROM `value` WHERE name = '$UserName'";
-                $aDB = new DBConnection('Something');
-                $aDB->query($SQL);
-                if($aDB->lastCount() > 0 ){
-                    $row = $aDB->next();
-                    $result = $row['value'];
-                    $_SESSION['Something'] = $result;
-                }
-                $result = $_SESSION['Something'];
-                
-            }
-            
-            
-            return $result;
-        }
         
         public function forget(){
             if(isset($_SESSION['Something'])){
@@ -94,30 +82,6 @@
             }
         }
         
-        public function loggedIn(){
-            $result = FALSE;
-            if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn']){
-                $result = TRUE;
-            }
-            return $result;
-        }// loggedIn
-        
-        public function checkLogin($pName, $pPass){
-            $result= FALSE;
-            $aConnection = new DBConnection("Something");
-            $SQL = "SELECT * FROM USER WHERE Name='$pName' and Password='$pPass';";
-            $aConnection->query($SQL);
-            //echo "RAN QUERY ".$SQL;
-            if($aConnection->lastCount() > 0){
-                $result = TRUE;
-                $_SESSION['user'] = $pName;
-               // echo "RAN QUERY  with count".$aConnection->lastCount();
-            }
-            
-            $_SESSION['LoggedIn'] = $result;
-            
-            return $result;
-        }
         
      }
 

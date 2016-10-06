@@ -1,5 +1,7 @@
 <?php
-    
+   // this is the DBconnection which helps with connecting to the database.
+	// it also helps with the creation of the array which if an echo is triggered the array does work.
+	// if it cannot select the database then an error will appear.
     class DBconnection {
 		
 		private $connectRS;

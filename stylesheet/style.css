@@ -1,0 +1,193 @@
+/*padding is used to generate space around the content*/
+/*height sets the height of an element*/
+/*background-color specifies the background colour of an element*/
+/* color specifies the color of the font*/
+#header, #footer{
+	padding: 5px;
+	height: 50px;
+	background-color: #777;
+	color: #fff;
+}
+
+/* clear is used to control the behaviour of floating elements */
+#footer {
+	clear:both;
+}
+
+/*height sets the height of an element*/
+/*padding is used to generate space around the content*/
+#primary, #secondary{
+	height: 400px;
+	padding: 50px 0;
+}
+
+
+/*font-family property specifies the font for an element */
+#primary p, #content p, #secondary p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*background-color specifies the background colour of an element*/
+/* float specifies whether or not an element should float.*/
+/*width sets the width of an element*/
+#primary {
+	background-color: #eee;
+	float:left;
+	width:240px;
+}
+
+/*list-style-type specifies the type of list-item marker.*/
+#primary ul{
+	list-style-type: none;
+}
+
+/* color specifies the color of the font*/
+/*display property specifies the type of box used for an HTML element*/
+/* line-height specifies the line height */
+/*padding is used to generate space around the content*/
+/* text-decoration specifies the decoration added to text */
+#primary > ul > li > a {
+	color: #aaa;
+	display: block;
+	line-height: 2em;
+	padding: 0.5em 0.5em;
+	text-decoration: none;
+}
+
+/* float specifies whether or not an element should float.*/
+/*width sets the width of an element*/
+/*height sets the height of an element*/
+/*padding is used to generate space around the content*/
+/*background-color specifies the background colour of an element*/
+#content {
+	float:left;
+	width: 800px;
+	height: 480px;
+	padding: 10px 30px;
+	background-color: #ccc;
+}
+
+/*font-family property specifies the font for an element */
+#content h1{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*background-color specifies the background colour of an element*/
+/* float specifies whether or not an element should float.*/
+/*width sets the width of an element*/
+#secondary{
+	background-color: #ddd;
+	float:left;
+	width:240px;
+}
+
+/*margin generates space around elements*/
+/*padding is used to generate space around the content*/
+/*font-size sets the size of a font*/
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+}
+
+
+/*background-color specifies the background colour of an element*/
+/*margin generates space around elements*/
+/*overflow speifies what happens if content overlows an element's box*/
+nav{
+	background-color: #333;
+	margin: 0;
+	overflow: hidden;
+}
+
+
+/*margin generates space around elements*/
+/*padding is used to generate space around the content*/
+nav ul{
+	margin: 0;
+	padding: 0;
+}
+/*display property specifies the type of box used for an HTML element*/
+/*list-style-type specifies the type of list-item marker.*/
+nav ul li{
+	/*this allows us to arrange list items in a row without using a float */
+	display :inline-block;
+	list-style-type: none;
+}
+
+
+/* color specifies the color of the font*/
+/*background-color specifies the background colour of an element*/
+/* line-height specifies the line height */
+/*display property specifies the type of box used for an HTML element*/
+/*padding is used to generate space around the content*/
+/* text-decoration specifies the decoration added to text */
+nav > ul > li > a {
+	color: #aaa;
+	background-color: #333;
+	display: block;
+	line-height: 2em;
+	padding: 0.5em 0.5em;
+	text-decoration: none;
+}
+
+/*width sets the width of an element*/
+#container {
+	width:1340px;
+}
+
+/*width sets the width of an element*/
+/*height sets the height of an element*/
+img.witch{
+	width: 282px;
+	height: 362px;
+}
+/*width sets the width of an element*/
+/*height sets the height of an element*/
+/* setting a border to 0 prevents an image if used as a link from gaining a border in IE*/
+img.youtube{
+	width: 142px;
+	height: 191px;
+	border: 0;
+}
+/*width sets the width of an element*/
+/*height sets the height of an element*/
+img.sword{
+	width: 191px;
+	height: 287.75px;
+}
+/*width sets the width of an element*/
+/*height sets the height of an element*/
+img.logo{
+	width: 50px;
+	height: 50px;
+}
+
+/*display property specifies the type of box used for an HTML element*/
+/*padding is used to generate space around the content*/
+.taskNavigation{
+	display:inline-block;
+	padding:0;margin:0
+}
+
+/*display property specifies the type of box used for an HTML element*/
+.taskNavigation li{
+	display:inline
+}
+
+/* THE FOLLOWING IS FOR WHEN I SET UP THE STEPS IN THE TASK IN THE FUTURE */
+/* text-decoration specifies the decoration added to text */
+/* color specifies the color of the font*/
+/* float specifies whether or not an element should float.*/
+/*padding is used to generate space around the content*/
+.taskNavigation li a{
+	text-decoration:none;
+	color:#000;
+	float:left;
+	padding:8px 16px
+}
+
+/*background-color specifies the background colour of an element*/
+.taskNavigation li a:hover{
+	background-color:#ccc
+}
