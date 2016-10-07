@@ -1,5 +1,5 @@
 <?php
-// this grabs the model and sets up for the array display (though the array comes through it does not display sadly)
+
 	error_reporting(E_ALL);
 	require_once("../model/QuestionModel.php");
 
@@ -7,10 +7,18 @@ class CompView
 {
 	public function Render()
 	{
-	$sModel = new QuestionModel();
-	$sModel->answer();
-	$Question = $sModel->Question();
-	$Answers = $sModel->answer();
+ $sModel = new QuestionModel();
+
+        //$sModel->answer();
+
+        $Question = $sModel->Question();
+
+        $Answers = $sModel->answer($Question["QuestionID"]);
+		
+		
+
+
+        
 ?>
 
 <!-- in this view there is a form which posts all of the data the user inputs to the controller -->
@@ -42,11 +50,11 @@ class CompView
 			</p>
 
 			<p>
-				<?php echo $Question. "</br>";
+				<?php print_r($Question). "</br>";
 				$anAnswer = "";
 				foreach ((array)$anAnswer as $Answers){
 				?>
-				<input type="radio" name="anAnswer" value="<?php echo $anAnswer['AnswerID'];?>"> <?php $anAnswer['AnswerText']?> </br>
+				<input type="radio" name="anAnswer" value="<?php print_r ($anAnswer)['AnswerID'];?>"> <?php $anAnswer['AnswerText']?> </br>
 				
 				<?php 
 				}

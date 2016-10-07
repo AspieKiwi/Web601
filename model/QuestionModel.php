@@ -23,28 +23,45 @@
 
             
 		// what I added in >_<
-		public function Question(){
-			$questionresult = "";
-        $SQL = "SELECT QuestionID, QuestionText From tblQuestion ORDER BY RAND()";
-		$aDB = new DBConnection(
-		'competion_database');
-		$aDB->query($SQL);
-		$row = $aDB->fetchNext();
-		$questionresult = $row['QuestionText'];
-		return $questionresult;
-		}
+public function Question(){
+
+    $questionresult = "";
+
+    $SQL = "SELECT QuestionID, QuestionText From tblQuestion ORDER BY RAND()";
+
+    $aDB = new DBConnection(
+
+                            'competion_database');
+
+    $aDB->query($SQL);
+
+    $row = $aDB->fetchNext();
+
+    $questionresult = $row;
+
+    return $questionresult;
+
+
+}
 		
 		// figure out how to make this work
 		
-		public function answer(){
-			 $aDB = new DBConnection("competion_database");
-			$aDB->query("SELECT * FROM `tblproposedanswer` WHERE QuestionID = 1");
-	  
-			while($aRow = $aDB->fetchNext()){
-				$Answer[] = $aRow['AnswerText']. "</br>";
-		    	}
-		return $Answer;
-		}
+public function answer($pID){
+
+    $aDB = new DBConnection("competion_database");
+
+    $aDB->query("SELECT * FROM `tblproposedanswer` WHERE QuestionID = $pID");
+
+    
+
+    while($aRow = $aDB->fetchNext()){
+
+        $Answer[] = $aRow;
+    }
+	//var_dump($Answer);
+    return $Answer;
+
+}
 		
 		
 		
